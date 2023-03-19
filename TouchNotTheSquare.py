@@ -24,7 +24,7 @@ keyboardcommandFont = pygame.font.Font("fonts/Rubik-VariableFont_wght.ttf", 20)
 
 
 # Music
-wavFile = "music/Music.wav"
+wavFile = "music/Music.mp3"
 pygame.mixer.music.load(wavFile)
 pygame.mixer.music.play(-1)
 pygame.mixer.music.set_volume(0.5)
