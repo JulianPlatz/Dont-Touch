@@ -1,2 +1,2 @@
-# Touch-Not-The-Square
-My First Python Game (pygame)
+# Don't Touch
+A pygame with less than 100 lines of code.
