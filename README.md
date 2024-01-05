@@ -15,5 +15,5 @@ A pygame with less than 100 lines of code.
 <hr>
 
 ### Requirements:
-- Python 3
-- pygame libary
+- Python3
+- pygame-libary
