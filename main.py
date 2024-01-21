@@ -4,12 +4,12 @@ from random import randrange
 
 init()
 
-screen = display.set_mode((500, 1000))
-clock = time.Clock()
+screen  = display.set_mode((500, 1000))
+clock   = time.Clock()
 
-scoreFont = font.Font("fonts/Rubik-weight.ttf", 25)
-gameoverFont = font.Font("fonts/Rubik-weight.ttf", 75)
-restartFont = font.Font("fonts/Rubik-weight.ttf", 30)
+scoreFont           = font.Font("fonts/Rubik-weight.ttf", 25)
+gameoverFont        = font.Font("fonts/Rubik-weight.ttf", 75)
+restartFont         = font.Font("fonts/Rubik-weight.ttf", 30)
 keyboardcommandFont = font.Font("fonts/Rubik-weight.ttf", 20)
 
 mixer.music.load("music/Music.wav")
@@ -18,19 +18,19 @@ mixer.music.set_volume(0.5)
 
 background = image.load("images/Background.png")
 
-score, highscore = 0, 0
-gameover = False
-can_move = True
+score, highscore    = 0, 0
+gameover            = False
+can_move            = True
 
-playerImage = image.load("images/Player.png")
-playerX, playerY = 225, 475
-playerWidth, playerHeight = 50, 50
-playerSpeed = 10
+playerImage                 = image.load("images/Player.png")
+playerX, playerY            = 225, 475
+playerWidth, playerHeight   = 50, 50
+playerSpeed                 = 10
 
-enemyImage = image.load("images/Enemy.png")
-enemyX, enemyY = 0, randrange(1000)
+enemyImage              = image.load("images/Enemy.png")
+enemyX, enemyY          = 0, randrange(1000)
 enemyWidth, enemyHeight = 30, 30
-enemySpeed = 20
+enemySpeed              = 20
 
 is_running = True
 while is_running:
@@ -62,8 +62,8 @@ while is_running:
     playerX = max(0, min(playerX, 450)) # Player-Screen-Barrier
 
     screen.blit(background, (0, 0))
-    enemy = screen.blit(enemyImage, (enemyX, enemyY, enemyWidth, enemyHeight))
-    player = screen.blit(playerImage, (playerX, playerY, playerWidth, playerHeight))
+    enemy   = screen.blit(enemyImage, (enemyX, enemyY, enemyWidth, enemyHeight))
+    player  = screen.blit(playerImage, (playerX, playerY, playerWidth, playerHeight))
 
     scoretext = scoreFont.render("Score: " + str(score), 1, (255, 255, 255))
     screen.blit(scoretext, (20, 20))
@@ -77,11 +77,11 @@ while is_running:
     screen.blit(keyboardrighttext, (20, 960))
 
     if player.colliderect(enemy): # Player-Enemy-Collide
-        gameover = True
-        can_move = False
-        playerX, playerY = 225, 515
-        enemyX, enemyY = 235, 510
-        enemySpeed = 20
+        gameover            = True
+        can_move            = False
+        playerX, playerY    = 225, 515
+        enemyX, enemyY      = 235, 510
+        enemySpeed          = 20
 
         if score > highscore: # Set Highscore
             highscore = score
